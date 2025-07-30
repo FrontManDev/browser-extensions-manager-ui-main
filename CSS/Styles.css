@@ -1,0 +1,271 @@
+:root {
+    --neutral-900: hsl(227, 75%, 14%);
+    --neutral-800: hsl(226, 25%, 17%);
+    --neutral-700: hsl(225, 23%, 24%);
+    --neutral-600: hsl(226, 11%, 37%);
+    --neutral-300: hsl(0, 0%, 78%);
+    --neutral-200: hsl(217, 61%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+    --neutral-0: hsl(200, 60%, 99%);
+
+
+    --red-700: hsl(3, 77%, 44%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-400: hsl(3, 86%, 64%);
+
+    --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+
+    --bgColor: var(--neutral-900);
+    --bgbtnColor: var(--neutral-800);
+    --bgextColor: var(--neutral-700);
+    --pColor: var(--neutral-600);
+    --ppColor: var(--neutral-300);
+    --bgDark: var(--dark-gradient);
+    --activebtn: var(--red-500);
+    --textbtn: var(--neutral-900);
+    --borderColor: #424242;
+    --white: #ffffff;
+    --grey: grey;
+    --activeSwitch: var(--red-400);
+    --inactiveSwitch: var(--neutral-700);
+}
+
+.light-theme {
+    --bgColor: var(--neutral-100);
+    --bgbtnColor: #ffffff;
+    --bgextColor: #eaeaea;
+    --pColor: #ffffff;
+    --ppColor: #666666;
+    --bgDark: var(--light-gradient);
+    --activebtn: #ff6b6b;
+    --textbtn: #ffffff;
+    --borderColor: #cccccc;
+    --white: black;
+    --grey: #999999;
+    --activeSwitch: #ff6b6b;
+    --inactiveSwitch: #cccccc;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    padding: 50px 200px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-image: var(--bgDark);
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bgbtnColor);
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.heading button {
+    background-color: var(--bgextColor);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.head-actions {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    margin: 30px 0px;
+}
+
+.head-actions .Actions {
+    display: flex;
+    gap: 10px;
+}
+
+.head-actions .Actions button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: var(--pColor);
+    border: 1px solid var(--bgbtnColor);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.head-actions .Actions .activebutton {
+    background-color: var(--activebtn);
+    color: var(--textbtn);
+}
+
+.extensions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.extensions .extension {
+    padding: 5px;
+    width: 32.7%;
+    height: 150px;
+    background-color: var(--bgbtnColor);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--borderColor);
+    position: relative;
+}
+
+.extensions .Head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    gap: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.extensions .Head h2 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.extensions .Head p {
+    font-size: 14px;
+    color: var(--ppColor);
+}
+
+.extensions .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+
+.extensions .actions button {
+    padding: 5px 10px;
+    background-color: var(--bgbtnColor);
+    color: var(--white);
+    border-radius: 50px;
+    border: 1px solid var(--grey);
+    cursor: pointer;
+}
+
+.extensions .actions .active-content {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.extensions .actions .active {
+    width: 32px;
+    height: 17px;
+    border-radius: 50px;
+    background-color: var(--activeSwitch);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.extensions .actions .inactive {
+    width: 32px;
+    height: 17px;
+    border-radius: 50px;
+    background-color: var(--inactiveSwitch);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.extensions .actions .active .ceircl,
+.extensions .actions .inactive .ceircl {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50px;
+    position: absolute;
+    transition: 0.3s;
+}
+
+
+@media (max-width:1250px) {
+    body {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        background-image: var(--bgDark);
+    }
+
+    .extensions .extension {
+        padding: 5px;
+        width: 32.5%;
+        height: 150px;
+        background-color: var(--bgbtnColor);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid var(--borderColor);
+        position: relative;
+    }
+}
+
+@media (max-width:840px) {
+    .extensions .extension {
+        padding: 5px;
+        width: 49%;
+        height: 150px;
+        background-color: var(--bgbtnColor);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid var(--borderColor);
+        position: relative;
+    }
+
+    .head-actions {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .head-actions h1 {
+        text-align: center;
+    }
+
+    .head-actions .Actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .extensions .extension {
+        padding: 5px;
+        width: 100%;
+        height: 150px;
+        background-color: var(--bgbtnColor);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid var(--borderColor);
+        position: relative;
+    }
+}
